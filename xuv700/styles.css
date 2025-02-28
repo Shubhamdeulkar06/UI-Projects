@@ -1,0 +1,508 @@
+@import url("https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=League+Spartan:wght@100..900&family=Quicksand:wght@300..700&display=swap");
+
+/* Define CSS Variables for Colors */
+:root {
+  --background-color: #000;
+  --text-color: #fff;
+  --highlight-color: #ffac30;
+  --input-bg-color: #595959;
+  --button-icon-color: #fff;
+  --main-heading-color: #275975;
+  --main-title-color: #55c2ff;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  height: 100%;
+  width: 100%;
+  color: var(--text-color);
+  font-family: "Quicksand", sans-serif;
+}
+
+/* Nav Section */
+.nav-section {
+  padding: 1.25rem 0;
+}
+.nav-section .nav {
+  justify-content: space-between;
+  padding: 3.25rem 0;
+}
+
+.nav-section .nav-link {
+  padding: 0;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.nav-section .nav-link.active {
+  color: var(--highlight-color);
+  position: relative;
+}
+
+.nav-section .nav-link.active::after {
+  content: "";
+  position: absolute;
+  background-color: var(--highlight-color);
+  left: 0;
+  width: 100%;
+  height: 1px;
+  border: 1px solid;
+  bottom: 0;
+}
+
+.nav-section .nav-pills .nav-link.active {
+  font-weight: 700;
+  background-color: transparent;
+  color: var(--highlight-color);
+}
+
+.nav-section .nav-link:hover {
+  color: var(--highlight-color);
+}
+
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.305em;
+  vertical-align: 0em;
+  content: "";
+  border-top: 0.5em solid;
+  border-right: 0.5em solid transparent;
+  border-left: 0.5em solid transparent;
+}
+
+.navbar-expand-lg .navbar-toggler {
+  display: inline-block;
+}
+
+/* Form Styling */
+.nav-section form {
+  width: 27.7rem;
+}
+.nav-section form div {
+  background-color: var(--input-bg-color);
+  border-radius: 15px;
+}
+
+.nav-section form input,
+.nav-section form button {
+  background-color: var(--input-bg-color);
+  border: none;
+  color: var(--text-color);
+}
+
+.nav-section form input {
+  padding: 0 1rem;
+}
+
+.nav-section form input:focus {
+  box-shadow: none;
+  color: var(--text-color);
+  background-color: var(--input-bg-color);
+}
+
+.nav-section form button i {
+  color: var(--button-icon-color);
+}
+
+/* Button Styling */
+.nav-section .navbar-toggler {
+  padding: 0;
+}
+.nav-section .menu-icon {
+  margin-left: -100px;
+}
+/* hero section  */
+.hero-section h1 {
+  font-size: 14vw;
+  font-family: "Allerta Stencil", system-ui;
+  color: var(--main-heading-color);
+}
+.hero-section .hero-image img {
+  width: 100%;
+}
+.hero-section {
+  height: 100%;
+  width: 100%;
+}
+.hero-section .hero-image p {
+  width: 52.2%;
+  margin: 0 auto;
+  margin-top: -60vh;
+  text-align: center;
+  margin-bottom: 4.375rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+/* hero-section fetures  */
+.features-heading-1 {
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.features-heading-2 {
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.ratings-wrapper span {
+  font-size: 0.938rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--highlight-color);
+  padding: 10px;
+}
+
+.ratings-wrapper p {
+  color: var(--main-title-color);
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.features span {
+  display: block;
+  color: var(--main-title-color);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.features p {
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.detail {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.detail-img {
+  margin-top: -22vh;
+  margin-left: -12vh;
+  z-index: -1;
+}
+
+.detail p {
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 146.5%;
+  width: 32rem;
+  margin-bottom: 2rem;
+}
+
+.detail button {
+  border-radius: 26px;
+  background: var(--highlight-color);
+  color: var(--background-color);
+
+  font-family: Spartan;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* price section */
+.price-section {
+  margin-top: 10rem;
+  background-image: url(./images/annie-spratt-NWE6RxnKtNM-unsplash\ 1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 -111vh;
+}
+.price-section .row.price-top h2 {
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 1rem;
+}
+.price-section .row.price-top p {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 146.5%;
+}
+.price-section .price-top img {
+  width: 100%;
+}
+
+.price-section .price-mid {
+  margin-top: 0;
+}
+
+.price-mid ul.nav .nav-item .nav-link {
+  padding: 0;
+  margin: 3rem 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2rem;
+  color: var(--text-color);
+}
+.price-mid ul.nav .nav-item .nav-link.active {
+  color: var(--highlight-color);
+  position: relative;
+}
+.price-mid ul.nav .nav-item .nav-link:hover {
+  color: var(--highlight-color) !important;
+}
+.price-mid ul.nav .nav-item .nav-link.active::after {
+  content: "";
+  position: absolute;
+  background-color: var(--highlight-color);
+  left: 0;
+  width: 100%;
+  height: 1px;
+  border: 1px solid;
+  bottom: 0;
+}
+.price-table-heading {
+  background-color: var(--input-bg-color);
+  border-radius: 10px;
+  margin: 2rem -1rem;
+  padding: 0.5rem 1rem;
+}
+.price-table-heading h4 {
+  margin: 0;
+  color: var(--main-title-color);
+}
+
+.model-items {
+  padding: 1rem 0;
+}
+.model-items h4 {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.model-items p {
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.model-items span {
+  font-size: 0.938rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: var(--highlight-color);
+}
+.model-items button {
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--text-color);
+  border-radius: 20px;
+  border: 2px solid var(--highlight-color);
+  background: var(--background-color);
+  padding: 0.5rem 1.25rem;
+}
+.btn-grp {
+  text-align: end;
+}
+.view-more-btn {
+  color: var(--highlight-color);
+
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  background: var(--background-color);
+  border: none;
+}
+
+/* mileage   */
+.milage {
+  margin-top: 4rem;
+}
+.milage h2 {
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.milage p {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 128.5%;
+}
+.milage table {
+  width: 100%;
+}
+.milage table thead tr {
+  background: var(--input-bg-color);
+  color: var(--main-title-color);
+  /* border-radius: 20px; */
+  font-family: Quicksand;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.milage th {
+  padding: 0.5rem 1rem;
+}
+.milage th:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+th:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.milage table tbody tr {
+  border-bottom: 1px solid var(--text-color);
+}
+.milage table tbody tr:last-child {
+  border: none;
+}
+.milage table tbody tr:first-child td {
+  padding-top: 2rem;
+}
+
+.milage table tbody td {
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+/* Media Queries */
+
+@media (max-width: 1400px) {
+  .nav-section .menu-icon {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 1024px) {
+  .nav-section .nav-link.active::after {
+    display: none !important;
+  }
+  .hero-section .hero-image p {
+    width: 72.2%;
+    margin-top: -60vh;
+  }
+  .detail-img {
+    width: 150%;
+    margin-top: 0vh;
+    margin-left: -1vh;
+    /* position: static !important; */
+  }
+}
+@media (max-width: 992px) {
+  .nav-section .nav-link.active::after {
+    display: none !important;
+  }
+  .hero-section .hero-image p {
+    width: 72.2%;
+    margin-top: -50vh;
+  }
+  .detail-img {
+    width: 150%;
+    margin-top: 0vh;
+    margin-left: -1vh;
+    /* position: static !important; */
+  }
+}
+@media (max-width: 768px) {
+  :root {
+    font-size: 12px;
+  }
+  .hero-section .hero-image p {
+    width: 72.2%;
+    margin-top: -40vh;
+  }
+  .detail-img {
+    width: 130%;
+    margin-top: 0vh;
+    margin-left: -1vh;
+    /* position: static !important; */
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    font-size: 8px;
+  }
+
+  .nav-section .navbar-collapse {
+    padding: 1rem 3rem;
+  }
+
+  .hero-section .hero-image p {
+    width: 72.2%;
+    margin-top: -30vh;
+  }
+  .detail-img {
+    width: 78%;
+    margin-top: 0vh;
+    margin-left: 10vh;
+    /* position: static !important; */
+  }
+  .detail-bottom {
+    margin-top: 25vh;
+  }
+}
+@media (max-width: 560px) {
+  .detail-img {
+    /* width: 100%; */
+    margin-top: 0vh;
+    margin-left: 10vh;
+    /* position: static !important; */
+  }
+  .detail-bottom {
+    margin-top: 25vh;
+  }
+  .detail {
+    padding: 20px 40px;
+  }
+}
+
+@media (max-width: 320px) {
+  :root {
+    font-size: 8px;
+  }
+  .hero-section .hero-image p {
+    width: 72.2%;
+    margin-top: -20vh;
+  }
+  .detail-img {
+    width: 70%;
+    margin-top: 0vh;
+    margin-left: 10vh;
+    /* position: static !important; */
+  }
+  .detail-bottom {
+    margin-top: 25vh;
+  }
+  .detail {
+    padding: 20px 0;
+  }
+}
