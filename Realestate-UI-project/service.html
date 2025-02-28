@@ -1,0 +1,155 @@
+<div class="services-area">
+    <div class="area-padding">
+        <div class="container">
+            <div class="row add-padding" class="">
+                <?php
+                // Get all unique values of the "location" field
+                $locations = get_posts(array(
+                    'post_type' => 'property', // Replace with your actual custom post type name
+                    'posts_per_page' => -1,
+                    'fields' => 'ids',
+                ));
+
+                $unique_locations = array();
+                foreach ($locations as $location_post_id) {
+                    $location_value = get_field('location', $location_post_id);
+                    if ($location_value && !in_array($location_value, $unique_locations)) {
+                        $unique_locations[] = $location_value;
+                    }
+                }
+
+                // Get all unique values of the "property_type" field
+                $property_types = get_posts(array(
+                    'post_type' => 'property', // Replace with your actual custom post type name
+                    'posts_per_page' => -1,
+                    'fields' => 'ids',
+                ));
+
+                $unique_property_types = array();
+                foreach ($property_types as $property_type_post_id) {
+                    $property_type_value = get_field('property_type', $property_type_post_id);
+                    if ($property_type_value && !in_array($property_type_value, $unique_property_types)) {
+                        $unique_property_types[] = $property_type_value;
+                    }
+                }
+
+                // Check if the location filter is set in the URL
+                $location_filter = isset($_GET['location_filter']) ? sanitize_text_field($_GET['location_filter']) : '';
+
+                // Check if the property type filter is set in the URL
+                $property_type_filter = isset($_GET['property_type_filter']) ? sanitize_text_field($_GET['property_type_filter']) : '';
+
+                // Check if the keyword filter is set in the URL
+                $keyword_filter = isset($_GET['keyword_filter']) ? sanitize_text_field($_GET['keyword_filter']) : '';
+                ?>
+                <form action="<?php echo esc_url(home_url('/')); ?>" method="get">
+                    <!-- <label for="location_filter">Filter by Location:</label> -->
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <select name="location_filter" id="location_filter" class="form-control">
+                                <option value="">Location</option>
+                                <?php foreach ($unique_locations as $location_option) : ?>
+                                    <option value="<?php echo esc_attr($location_option); ?>" <?php selected($location_option, $location_filter); ?>>
+                                        <?php echo esc_html($location_option); ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="col-lg-3">
+                            <!-- <label for="property_type_filter">Filter by Property Type:</label> -->
+                            <select name="property_type_filter" id="property_type_filter" class="form-control">
+                                <option value="">Property Type</option>
+                                <?php foreach ($unique_property_types as $property_type_option) : ?>
+                                    <option value="<?php echo esc_attr($property_type_option); ?>" <?php selected($property_type_option, $property_type_filter); ?>>
+                                        <?php echo esc_html($property_type_option); ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="col-lg-3">
+                            <!-- <label for="keyword_filter">Keyword Search:</label> -->
+                            <input type="text" placeholder="Enter Your Keyword" name="keyword_filter" class="form-control" id="keyword_filter" value="<?php echo esc_attr($keyword_filter); ?>">
+                        </div>
+                        <div class="col-lg-3">
+                            <input class="form-control btn  btn-submit" type="submit" value="Search">
+                        </div>
+
+                    </div>
+
+                </form>
+                <div class="row">
+                    <div class="col-12 service-details">
+                        <h2 class="text-center">We are Offering the Best Real Estate Deals</h2>
+                        <p class="text-center">Look at our latest listed properties and check out the facilities on
+                            them, We have
+                            already sold more than 5,000 Homes and we are still going at very good pace. We would
+                            love you to look into these properties and we hope that you will find something
+                            match-able to your needs.</p>
+                    </div>
+                </div>
+                <?php
+                // WP_Query arguments
+                $args = array(
+                    'post_type' => 'property', // Replace with your actual custom post type name
+                    'posts_per_page' => -1, // Show all posts, adjust as needed
+                );
+
+                // Add the location filter to the query if set
+                if (!empty($location_filter)) {
+                    $args['meta_query'][] = array(
+                        'key' => 'location', // Replace with your actual ACF field key
+                        'value' => $location_filter,
+                        'compare' => '=',
+                    );
+                }
+
+                // Add the property type filter to the query if set
+                if (!empty($property_type_filter)) {
+                    $args['meta_query'][] = array(
+                        'key' => 'property_type', // Replace with your actual ACF field key for property type
+                        'value' => $property_type_filter,
+                        'compare' => '=',
+                    );
+                }
+
+                // Add the keyword filter to the query if set
+                if (!empty($keyword_filter)) {
+                    $args['s'] = $keyword_filter; // Search for keywords in post content, title, and other fields
+                }
+
+                $query = new WP_Query($args);
+
+                if ($query->have_posts()) :
+                    while ($query->have_posts()) : $query->the_post();
+
+                        // Display ACF fields
+                        $image= get_field('image');
+                ?>
+                        <div class=" col-lg-4 ">
+                            <div class="card">
+                                <img src="<?php echo $image['url'] ?>" class="card-img-top card-image"
+                                    alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-title"><?php echo get_field('property_name')?></h4>
+                                    <p class="card-text d-flex gap-5 align-items-center"><span><img width="15px"
+                                                src="<?php echo bloginfo('template_url') ?>/images/location.png" alt=""> <?php echo get_field('location')?></span> <span><img
+                                                width="22px" src="<?php echo bloginfo('template_url') ?>/images/villa.png" alt=""><?php echo get_field('property_type')?></span></p>
+                                    <p class="property-price"><?php echo get_field('price')?>/ <span class="strikethrough">3700</span>
+                                        NIGHT ONWARDS</p>
+                                    <a href="#" class="btn card-btn">View details</a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+                <?php else : ?>
+                    <div class="col-lg-12">
+                        <p>No results found.</p>
+                    </div>
+                <?php endif; ?>
+
+                <?php wp_reset_postdata(); // Reset post data after the custom query 
+                ?>
+            </div>
+        </div>
+    </div>
+</div>

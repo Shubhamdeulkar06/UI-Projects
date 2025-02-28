@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realestate</title>
+    <!-- Include jQuery (Slick depends on it) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <header class="fixed-top" id="header">
+            <nav class="navbar navbar-expand-lg container">
+                <div class="container d-flex justify-content-between">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <h1><a href="index.html"> <img src="/images/logo.png"
+                                    class="logo-img"><span>real</span>estate</a>
+                        </h1>
+                    </div>
+
+                    <!-- Navbar Toggle Button -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Nav Links -->
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link " href="#">
+                                    <img src="/images/villa.png" width="25px">
+                                </a></li>
+                            <li class="nav-item"><a class="nav-link " href="#For Sale">For Sale</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#For Rent">For Rent</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#Investments">Investments</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#Company">Company</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
+                            <button class="btn btn-submit-property">Submit Your Property</button>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- eoc header -->
+        <!-- hero section -->
+        <section id="hero" class="hero-section">
+
+            <div class="container">
+                <div class="hero-slider extra-margin">
+                    <!-- Slide 1 -->
+                    <div class="slider-item row">
+                        <div class="text-container col-lg-8 col-12 col-md-8">
+                            <h1>Penthouse Apartment with 5 Rooms in Pipera-Baneasa Forest Area</h1>
+                            <p>Penthouse apartment for sale located on lancu Nicolae Road. With this property
+                                you can enjoy the advantages such as proximity to Baneasa Forest and the
+                                benefits of a luxury residential area, all in the immediate vicinity of the largest
+                                shopping centers in Bucharest — Baneasa Shopping City, Carrefour, Metro,
+                                Bricostore and Mobexpert.</p>
+                            <button class="btn btn-hero-1">View details</button>
+                            <button class="btn btn-hero-2">See All Apartments</button>
+                        </div>
+                        <div class="image-container col-lg-4 col-12 col-md-4">
+                            <img src="./images/banner-img.png" alt="Business">
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="slider-item row">
+                        <div class="text-container col-lg-8 col-12 col-md-8">
+                            <h1>Penthouse Apartment with 5 Rooms in Pipera-Baneasa Forest Area</h1>
+                            <p>Penthouse apartment for sale located on lancu Nicolae Road. With this property
+                                you can enjoy the advantages such as proximity to Baneasa Forest and the
+                                benefits of a luxury residential area, all in the immediate vicinity of the largest
+                                shopping centers in Bucharest — Baneasa Shopping City, Carrefour, Metro,
+                                Bricostore and Mobexpert.</p>
+                            <button class="btn btn-hero-1">View details</button>
+                            <button class="btn btn-hero-2">See All Apartments</button>
+                        </div>
+                        <div class="image-container col-lg-4 col-12 col-md-4">
+                            <img src="./images/banner-img.png" alt="Innovation">
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="slider-item row">
+                        <div class="text-container col-lg-8 col-12 col-md-8">
+                            <h1>Penthouse Apartment with 5 Rooms in Pipera-Baneasa Forest Area</h1>
+                            <p>Penthouse apartment for sale located on lancu Nicolae Road. With this property
+                                you can enjoy the advantages such as proximity to Baneasa Forest and the
+                                benefits of a luxury residential area, all in the immediate vicinity of the largest
+                                shopping centers in Bucharest — Baneasa Shopping City, Carrefour, Metro,
+                                Bricostore and Mobexpert.</p>
+                            <button class="btn btn-hero-1">View details</button>
+                            <button class="btn btn-hero-2">See All Apartments</button>
+                        </div>
+                        <div class="image-container col-lg-4 col-12 col-md-4">
+                            <img src="./images/banner-img.png" alt="Growth">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- service section -->
+        <section class="service-section">
+            <div class="container">
+                <div class="extra-margin">
+                    <form action="">
+
+                        <div class="row">
+                            <div class="col-lg-3"><select class="form-control " name="location" id="location">
+                                    <option value="location">Location</option>
+                                </select></div>
+                            <div class="col-lg-3"><select class="form-control" name="location" id="location">
+                                    <option value="location">Property Type</option>
+                                </select></div>
+                            <div class="col-lg-3"><input type="text" placeholder="Enter Your keyword"
+                                    class="form-control" name="location" id="location">
+
+                                </input></div>
+                            <div class="col-lg-3">
+                                <input class="form-control btn  btn-submit" type="submit" value="Search">
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="row">
+                        <div class="col-12 service-details">
+                            <h2 class="text-center">We are Offering the Best Real Estate Deals</h2>
+                            <p class="text-center">Look at our latest listed properties and check out the facilities on
+                                them, We have
+                                already sold more than 5,000 Homes and we are still going at very good pace. We would
+                                love you to look into these properties and we hope that you will find something
+                                match-able to your needs.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class=" col-lg-4 ">
+                            <div class="card">
+                                <img src="./images/villa-verde-4bhk-kolkata-mob.jpg" class="card-img-top card-image"
+                                    alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-title">Casa Bliss - Pilerne</h4>
+                                    <p class="card-text d-flex gap-5 align-items-center"><span><img width="15px"
+                                                src="./images/location.png" alt=""> Goa </span> <span><img
+                                                width="22px" src="./images/villa.png" alt=""> Villa</span></p>
+                                    <p class="property-price">30000 / <span class="strikethrough">3700</span>
+                                        NIGHT ONWARDS</p>
+                                    <a href="#" class="btn card-btn">View details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col-lg-4">
+                            <div class="card">
+                                <img src="./images/modern-villa-in-an-exclusive-development-in-mijas.jpg"
+                                    class="card-img-top card-image" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-title">Coconut Grove - Candolim</h4>
+                                    <p class="card-text d-flex gap-5 align-items-center"><span><img width="15px"
+                                                src="./images/location.png" alt=""> Goa </span> <span><img
+                                                width="22px" src="./images/villa.png" alt=""> Villa</span></p>
+                                    <p class="property-price">30000 / <span class="strikethrough">3700</span>
+                                        NIGHT ONWARDS</p>
+                                    <a href="#" class="btn card-btn">View details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col-lg-4">
+                            <div class="card">
+                                <img src="./images/1-Bright-Outlook-Wohnbereich-1-scaled.jpg"
+                                    class="card-img-top card-image" alt="...">
+                                <div class="card-body">
+                                    <h4 class="card-title">Casa Marina - Mirador</h4>
+                                    <p class="card-text d-flex gap-5 align-items-center"><span><img width="15px"
+                                                src="./images/location.png" alt=""> Goa </span> <span><img
+                                                width="22px" src="./images/villa.png" alt=""> Apartment</span></p>
+                                    <p class="property-price">30000 / <span class="strikethrough">3700</span>
+                                        NIGHT ONWARDS</p>
+                                    <a href="#" class="btn card-btn">View details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer section -->
+        <footer>
+            <div class="footer-section">
+                <div class="container">
+                    <div class="extra-margin">
+                        <div class="row">
+                            <div class="col-xl-4 col-md-6 col-lg-6">
+                                <div class="content">
+                                    <h4>About Us</h4>
+                                    <p>Excepteur sint occaecat cupidatat non proident,
+                                        sunt in culpa qui officiala deserunt mollit anim id
+                                        est laborum.</p>
+                                    <p>Neque porro quisquam est, qui dolorem ipsum
+                                        quia dolor siamet, consectetur, adipisci velit, sed
+                                        quia numquam eus modi tempora incidunt labore
+                                        et dolore magnam aliquam quvoluptatem.</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-6 col-lg-6">
+                                <div class="content">
+                                    <h4>Property Types</h4>
+                                    <div class="footer-links">
+                                        <ul>
+                                            <li>
+                                                <a href="#">Villa</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Residential</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Apartment</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Condominium</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Shop</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Office</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-md-6 col-lg-6">
+                                <div class="content">
+                                    <h4>Locations</h4>
+                                    <div class="footer-links">
+                                        <ul>
+                                            <li>
+                                                <a href="#">Bucharest</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Constanta</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Brasov</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Cluj-Napoca</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Craiova</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6 col-lg-6">
+                                <div class="content content-box">
+                                    <h4>From the Blog</h4>
+                                    <div class="d-flex gap-2 mb-2">
+                                        <div><img src="./images/black-box.png" alt=""></div>
+                                        <div>
+                                            <p>Making First Impressions Count with
+                                                Leongatha Home</p>
+                                            <span class="text-green">INTERIOUR DESIGN</span> <span> MARCH 18,
+                                                2016</span>
+
+                                        </div>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <div><img src="./images/black-box.png" alt=""></div>
+                                        <div>
+                                            <p>Making First Impressions Count with
+                                                Leongatha Home</p>
+                                            <span class="text-green">INTERIOUR DESIGN</span> <span> MARCH 18,
+                                                2016</span>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="logo footer-logo d-block d-lg-flex align-items-center gap-4 p-md-0">
+                                    <h2 class="d-flex align-items-center"><img src="/images/logo.png"
+                                            class="logo-img"><span>real</span>estate</h2>
+                                    <p>Copyright © 2024 RealEstate, Inc. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+    </div>
+
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Slider JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.hero-slider').slick({
+                dots: true,
+                arrows: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 300000,
+                prevArrow: '<button type="button" class="slick-prev "></button>',
+                nextArrow: '<button type="button" class="slick-next "></button>'
+            });
+        });
+    </script>
+
+</body>
+
+</html>
